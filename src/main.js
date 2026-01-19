@@ -1,6 +1,6 @@
 import './style.css'
 
-// Email signup form handling
+// Email signup form handling with Buttondown
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('signupForm');
   const emailInput = document.getElementById('emailInput');
@@ -17,25 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add loading state
       submitBtn.classList.add('loading');
 
-      // Simulate API call (replace with actual email service integration)
-      // Options: ConvertKit, Buttondown, Mailchimp, or a simple Google Form
       try {
-        // For now, just show success after a brief delay
-        // TODO: Connect to actual email service
-        await new Promise(resolve => setTimeout(resolve, 800));
+        // Submit to Buttondown
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({ email }),
+        });
 
-        // Store locally as backup (for demo purposes)
-        const signups = JSON.parse(localStorage.getItem('claudeclarity_signups') || '[]');
-        signups.push({ email, timestamp: new Date().toISOString() });
-        localStorage.setItem('claudeclarity_signups', JSON.stringify(signups));
-
-        // Show success
-        form.style.display = 'none';
-        successMessage.classList.add('show');
-
+        // Buttondown returns 200 on success
+        if (response.ok || response.status === 200) {
+          // Show success
+          form.style.display = 'none';
+          successMessage.classList.add('show');
+        } else {
+          // If something went wrong, fall back to direct submit
+          form.submit();
+        }
       } catch (error) {
+        // On network error, fall back to direct form submit
         console.error('Signup error:', error);
-        // Could add error handling UI here
+        form.submit();
       } finally {
         submitBtn.classList.remove('loading');
       }
