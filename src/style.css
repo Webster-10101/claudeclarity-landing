@@ -1,0 +1,512 @@
+/* ========================================
+   CSS Variables & Theme
+   ======================================== */
+
+:root {
+  /* Colors - Dark theme with warm amber accent */
+  --color-bg: #0a0a0f;
+  --color-bg-elevated: #141419;
+  --color-surface: #1a1a22;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --color-text-primary: #f5f5f7;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #71717a;
+
+  --color-accent: #f59e0b;
+  --color-accent-glow: rgba(245, 158, 11, 0.2);
+  --color-success: #10b981;
+
+  /* Typography */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-unit: 1rem;
+  --container-max: 720px;
+
+  /* Animation */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   Background & Atmosphere
+   ======================================== */
+
+.bg-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 800px 600px at 50% 0%, rgba(245, 158, 11, 0.05), transparent),
+    radial-gradient(ellipse 600px 800px at 100% 100%, rgba(139, 92, 246, 0.03), transparent);
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 5rem 2rem;
+    gap: 5rem;
+  }
+}
+
+/* ========================================
+   Brand Mark
+   ======================================== */
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-primary);
+  animation: fadeInDown 0.8s var(--ease-smooth);
+}
+
+.clarity-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-accent);
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  max-width: 18ch;
+}
+
+.title .accent {
+  color: var(--color-accent);
+  position: relative;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
+  color: var(--color-text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 32ch;
+}
+
+.mobile-hide {
+  display: inline;
+}
+
+@media (max-width: 640px) {
+  .mobile-hide {
+    display: none;
+  }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ========================================
+   Email Signup
+   ======================================== */
+
+.signup {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.signup-label {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
+
+.signup-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .signup-form {
+    flex-direction: row;
+  }
+}
+
+.signup-form input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.2s var(--ease-smooth);
+  outline: none;
+}
+
+.signup-form input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+.signup-form input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: #ea8f00;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  transition: transform 0.2s var(--ease-smooth);
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(2px);
+}
+
+.signup-success {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: var(--color-success);
+  font-size: 0.9375rem;
+  animation: fadeInUp 0.4s var(--ease-smooth);
+}
+
+.signup-success.show {
+  display: flex;
+}
+
+/* ========================================
+   Preview Section
+   ======================================== */
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.preview-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.preview-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.preview-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.preview-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.preview-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.meta-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.meta-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.meta-value {
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: 2rem;
+}
+
+.footer p {
+  color: var(--color-text-tertiary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 40ch;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Blur-to-Focus Animation
+   ======================================== */
+
+.blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  animation: blurIn 0.8s var(--ease-smooth) forwards;
+}
+
+.blur-in[data-delay="200"] {
+  animation-delay: 0.2s;
+}
+
+.blur-in[data-delay="400"] {
+  animation-delay: 0.4s;
+}
+
+.blur-in[data-delay="600"] {
+  animation-delay: 0.6s;
+}
+
+.blur-in[data-delay="800"] {
+  animation-delay: 0.8s;
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--color-accent-glow);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+/* ========================================
+   Loading State
+   ======================================== */
+
+.btn-primary.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn-primary.loading .btn-text::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

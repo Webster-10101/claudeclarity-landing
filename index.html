@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A guide to building an AI-powered productivity system with Claude Code & Cowork. Coming soon." />
+    <title>Build Your AI-Powered Productivity System | Claude Clarity</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Background gradient -->
+      <div class="bg-gradient"></div>
+
+      <!-- Noise texture overlay -->
+      <div class="noise-overlay"></div>
+
+      <!-- Main content -->
+      <main class="container">
+        <!-- Logo/brand mark -->
+        <div class="brand-mark">
+          <svg class="clarity-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+            <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="20" cy="20" r="6" fill="currentColor"/>
+          </svg>
+          <span class="brand-text">Claude Clarity</span>
+        </div>
+
+        <!-- Hero section -->
+        <section class="hero">
+          <h1 class="title blur-in" data-delay="0">
+            Build Your<br>
+            <span class="accent">AI-Powered</span><br>
+            Productivity System
+          </h1>
+
+          <p class="subtitle blur-in" data-delay="200">
+            A complete guide to finally finding clarity<br class="mobile-hide">
+            with Claude Code & Cowork
+          </p>
+
+          <div class="status-badge blur-in" data-delay="400">
+            <span class="pulse-dot"></span>
+            <span>Coming Soon</span>
+          </div>
+        </section>
+
+        <!-- Email signup -->
+        <section class="signup blur-in" data-delay="600">
+          <div class="signup-container">
+            <p class="signup-label">Be the first to know when it launches</p>
+            <form class="signup-form" id="signupForm">
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="your@email.com"
+                required
+                aria-label="Email address"
+              />
+              <button type="submit" class="btn-primary">
+                <span class="btn-text">Notify Me</span>
+                <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </form>
+            <p class="signup-success" id="successMessage">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Thanks! We'll notify you when the book launches.
+            </p>
+          </div>
+        </section>
+
+        <!-- Book preview -->
+        <section class="preview blur-in" data-delay="800">
+          <div class="preview-card">
+            <div class="preview-label">What You'll Learn</div>
+            <ul class="preview-list">
+              <li>Set up Claude as your personal observability layer</li>
+              <li>Build a daily rhythm that actually sticks</li>
+              <li>Process voice notes into actionable next steps</li>
+              <li>Run background work while you focus on momentum</li>
+              <li>Keep projects visible without overwhelming yourself</li>
+            </ul>
+          </div>
+
+          <div class="meta-info">
+            <div class="meta-item">
+              <span class="meta-label">Format</span>
+              <span class="meta-value">Kindle eBook</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Length</span>
+              <span class="meta-value">~18,000 words</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Price</span>
+              <span class="meta-value">$4.99–6.99</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <p>A practical guide for non-technical knowledge workers who want to get more done with less mental overhead.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
