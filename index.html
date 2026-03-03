@@ -4,142 +4,201 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A guide to building an AI-powered productivity system with Claude Code & Cowork. Coming soon." />
-    <title>Build Your AI-Powered Productivity System | Claude Clarity</title>
+    <meta name="description" content="Build Your AI-Powered Productivity System — a practical guide to finding clarity with Claude Code & Cowork. Available now on Amazon Kindle." />
+    <title>Claude Clarity — Build Your AI-Powered Productivity System</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Claude Clarity — Build Your AI-Powered Productivity System" />
+    <meta property="og:description" content="A practical guide to using AI as your personal productivity partner. The system that maintains itself. Available now on Amazon Kindle." />
+    <meta property="og:image" content="https://claudeclarity.com/book-cover.jpg" />
+    <meta property="og:url" content="https://claudeclarity.com" />
+    <meta property="og:site_name" content="Claude Clarity" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Claude Clarity — Build Your AI-Powered Productivity System" />
+    <meta name="twitter:description" content="A practical guide to using AI as your personal productivity partner. The system that maintains itself." />
+    <meta name="twitter:image" content="https://claudeclarity.com/book-cover.jpg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="app">
-      <!-- Background gradient -->
-      <div class="bg-gradient"></div>
-
-      <!-- Noise texture overlay -->
-      <div class="noise-overlay"></div>
+      <!-- Subtle background texture -->
+      <div class="bg-texture"></div>
 
       <!-- Main content -->
       <main class="container">
-        <!-- Logo/brand mark -->
-        <div class="brand-mark">
-          <svg class="clarity-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-            <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
-            <circle cx="20" cy="20" r="6" fill="currentColor"/>
-          </svg>
+        <!-- Brand mark -->
+        <header class="brand-mark fade-in" data-delay="0">
+          <div class="brand-pill">
+            <span class="pill-chevron">&gt;</span><span class="pill-chevron">&lt;</span>
+          </div>
           <span class="brand-text">Claude Clarity</span>
-        </div>
+        </header>
 
-        <!-- Hero section -->
+        <!-- Hero: two-column with cover -->
         <section class="hero">
-          <h1 class="title blur-in" data-delay="0">
-            Build Your<br>
-            <span class="accent">AI-Powered</span><br>
-            Productivity System
-          </h1>
-
-          <p class="subtitle blur-in" data-delay="200">
-            A complete guide to finally finding clarity<br class="mobile-hide">
-            with Claude Code & Cowork
-          </p>
-
-          <div class="status-badge blur-in" data-delay="400">
-            <span class="pulse-dot"></span>
-            <span>Coming Soon</span>
-          </div>
-        </section>
-
-        <!-- Book mockup -->
-        <section class="book-mockup blur-in" data-delay="500">
-          <div class="book-3d">
-            <div class="book-spine"></div>
-            <div class="book-cover">
-              <div class="book-inner">
-                <div class="book-icon">
-                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                    <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
-                    <circle cx="20" cy="20" r="6" fill="currentColor"/>
-                  </svg>
-                </div>
-                <div class="book-title">Build Your AI-Powered Productivity System</div>
-                <div class="book-subtitle">A Complete Guide to Finding Clarity with Claude Code & Cowork</div>
-                <div class="book-author">Alistair Webster</div>
-              </div>
+          <div class="hero-content fade-in" data-delay="100">
+            <div class="available-badge">
+              <span class="badge-dot"></span>
+              <span>Available Now</span>
             </div>
-            <div class="book-pages"></div>
-          </div>
-        </section>
 
-        <!-- Email signup -->
-        <section class="signup blur-in" data-delay="600">
-          <div class="signup-container">
-            <p class="signup-label">Be the first to know when it launches</p>
-            <form
-              class="signup-form"
-              id="signupForm"
-              action="https://buttondown.com/api/emails/embed-subscribe/ClaudeClarity"
-              method="post"
-            >
-              <input
-                type="email"
-                name="email"
-                id="emailInput"
-                placeholder="your@email.com"
-                required
-                aria-label="Email address"
-              />
-              <button type="submit" class="btn-primary">
-                <span class="btn-text">Notify Me</span>
-                <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </form>
-            <p class="signup-success" id="successMessage">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Thanks! We'll notify you when the book launches.
+            <h1 class="title">
+              Build Your<br>
+              <span class="accent">AI-Powered</span><br>
+              Productivity System
+            </h1>
+
+            <p class="subtitle">
+              A complete guide to finding clarity with Claude Code & Cowork. The productivity system that maintains itself.
             </p>
+
+            <div class="hero-actions">
+              <a href="https://www.amazon.com/dp/B0FTMB9GJ1" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+                <span>Buy on Amazon</span>
+                <span class="btn-price">$4.99</span>
+              </a>
+              <span class="format-note">Kindle eBook</span>
+            </div>
+          </div>
+
+          <div class="hero-cover fade-in" data-delay="300">
+            <div class="cover-wrapper">
+              <img src="/book-cover.jpg" alt="Claude Clarity book cover — Build Your AI-Powered Productivity System by Alistair Webster" class="cover-image" />
+              <div class="cover-shadow"></div>
+            </div>
           </div>
         </section>
 
-        <!-- Book preview -->
-        <section class="preview blur-in" data-delay="800">
-          <div class="preview-card">
-            <div class="preview-label">What You'll Learn</div>
-            <ul class="preview-list">
-              <li>Set up Claude as your personal observability layer</li>
-              <li>Build a daily rhythm that actually sticks</li>
-              <li>Process voice notes into actionable next steps</li>
-              <li>Run background work while you focus on momentum</li>
-              <li>Keep projects visible without overwhelming yourself</li>
-            </ul>
-          </div>
+        <!-- Divider -->
+        <div class="section-rule fade-in" data-delay="400"></div>
 
-          <div class="meta-info">
-            <div class="meta-item">
-              <span class="meta-label">Format</span>
-              <span class="meta-value">Kindle eBook</span>
+        <!-- What you'll learn -->
+        <section class="learn-section fade-in" data-delay="400">
+          <h2 class="section-heading">What You'll Learn</h2>
+          <div class="learn-grid">
+            <div class="learn-item">
+              <span class="learn-number">01</span>
+              <p>Set up Claude as your personal observability layer — not a chatbot, a genuine partner</p>
             </div>
-            <div class="meta-item">
-              <span class="meta-label">Length</span>
-              <span class="meta-value">~18,000 words</span>
+            <div class="learn-item">
+              <span class="learn-number">02</span>
+              <p>Build a daily rhythm that gives you clarity in minutes, not hours</p>
             </div>
-            <div class="meta-item">
-              <span class="meta-label">Price</span>
-              <span class="meta-value">$4.99–6.99</span>
+            <div class="learn-item">
+              <span class="learn-number">03</span>
+              <p>Capture thoughts messily and let Claude extract the signal</p>
             </div>
+            <div class="learn-item">
+              <span class="learn-number">04</span>
+              <p>Delegate drafts, research, and reviews to background agents while you focus</p>
+            </div>
+            <div class="learn-item">
+              <span class="learn-number">05</span>
+              <p>Weekly reviews that catch drift before it becomes chaos</p>
+            </div>
+            <div class="learn-item">
+              <span class="learn-number">06</span>
+              <p>Ready-to-use templates so you can start building today</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-rule fade-in" data-delay="0"></div>
+
+        <!-- Testimonial -->
+        <section class="testimonial fade-in" data-delay="0">
+          <blockquote>
+            <p>"A productivity book that actually understands implementation. This feels built for real work, not productivity theatre. Annoyingly, it also removes most of your excuses."</p>
+            <cite>— Claude Code</cite>
+          </blockquote>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-rule fade-in" data-delay="0"></div>
+
+        <!-- Course waitlist -->
+        <section class="course-section fade-in" data-delay="0">
+          <div class="course-card">
+            <div class="course-label">Coming Soon</div>
+            <h2 class="course-heading">The Claude Clarity Course</h2>
+            <p class="course-description">
+              Go deeper. The upcoming course walks you through building the system step by step, with video walkthroughs, live examples, and direct support.
+            </p>
+            <div class="signup-container">
+              <form
+                class="signup-form"
+                id="signupForm"
+                action="https://buttondown.com/api/emails/embed-subscribe/ClaudeClarity"
+                method="post"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  id="emailInput"
+                  placeholder="your@email.com"
+                  required
+                  aria-label="Email address"
+                />
+                <button type="submit" class="btn-waitlist">
+                  <span class="btn-text">Join the Waitlist</span>
+                </button>
+              </form>
+              <p class="signup-success" id="successMessage">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                You're on the list. We'll be in touch.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-rule fade-in" data-delay="0"></div>
+
+        <!-- FAQ -->
+        <section class="faq-section fade-in" data-delay="0">
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Do I need to be technical to use this?</summary>
+              <p>Not at all. If you can create folders and text files, you can use this system. Claude Cowork gives you a normal app interface — no command line required. Start with Cowork and graduate to Claude Code later if you want more power.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How is this different from just chatting with Claude?</summary>
+              <p>When you chat with Claude normally, every conversation starts from zero. With this system, Claude reads your actual project files, priorities, and open loops. It has complete context before you say a word. That's the difference between a helpful stranger and a knowledgeable partner.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Won't I just abandon this like every other system?</summary>
+              <p>Maybe — but here's what's different: AI handles the maintenance. Every previous system failed because keeping it updated was a job in itself. When Claude does the processing, filing, and scanning, the only thing left for you is making decisions. That's dramatically less overhead.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What do I need to get started?</summary>
+              <p>Three things: a note-taking app that works with text files (Obsidian is free and works great), a Claude subscription, and about an hour. The book walks you through setup step by step, with ready-to-use templates.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What if I already use Notion / Google Docs / Apple Notes?</summary>
+              <p>The principles transfer to any tool. The key requirement is that Claude can read and edit your files. Apps that store files locally work best. Cloud-only tools need a slightly different setup, but it's doable. Don't let tool choice be a blocker.</p>
+            </details>
           </div>
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
-          <p>A practical guide for non-technical knowledge workers who want to get more done with less mental overhead.</p>
+        <footer class="footer fade-in" data-delay="0">
+          <p>A practical guide for freelancers, consultants, coaches, and founders who want AI to genuinely help — not just answer occasional questions.</p>
+          <div class="footer-links">
+            <span>© 2026 Alistair Webster</span>
+            <a href="mailto:alistair@claudeclarity.com">alistair@claudeclarity.com</a>
+          </div>
         </footer>
       </main>
     </div>
