@@ -399,6 +399,145 @@ body {
 }
 
 /* ========================================
+   Services Section (Work with Me)
+   ======================================== */
+
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-intro {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 52ch;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.service-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+
+.service-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.service-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.service-heading {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.service-description {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.service-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-includes li {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.service-includes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.5;
+}
+
+.btn-service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: auto;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-text-primary);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.25s var(--ease-out);
+}
+
+.btn-service:hover {
+  background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-service:active {
+  transform: translateY(0);
+}
+
+/* FAQ link */
+.faq-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.faq-link:hover {
+  color: var(--color-accent-deep);
+}
+
+/* ========================================
    Course Section
    ======================================== */
 
